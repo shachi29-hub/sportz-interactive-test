@@ -1,0 +1,186 @@
+.banner{
+    &--top{
+        &-text{
+            @media screen and (max-width: 768px) {
+               li{
+                align-items: flex-start;
+                text-align: center;
+               }
+            }
+        }
+    }
+    &--wrapper{
+        background-image: linear-gradient(to right bottom, #ea14ec, #bf32eb, #913fe5, #6045db, #1246ce);
+        padding: 60px 0;
+        position: relative;
+        z-index: 2;
+        @media screen and (max-width: 768px) {
+            flex-wrap: wrap
+        }
+        &::after{
+            content: '';
+            background-image: url('../images/desktop-top-bg.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .ball {
+            &-icon{
+                filter: brightness(0) invert(1);
+                width: 24px;
+            }
+          }    
+          .live{
+            &--circle{
+                &-main{
+                    position: relative;
+                }
+                &-info{
+                    background-color: $green;
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                    position: absolute;
+                    top: -30px;
+                    .icon-live{
+                        filter: brightness(0) invert(1);
+                        width: 15px;
+                    }
+
+                }
+            }
+        }        
+      }
+      &--score{
+        &-wrap{
+            .versus{
+                background-color: rgba($white, 0.2);
+                width: 30px;
+                height: 30px;
+                border-radius: 50px;
+              }
+        }
+        &-main{
+            .circle{
+                background-color: $white;
+                width: 132px;
+                height: 132px;
+                border-radius: 50%;
+                @media screen and (max-width: 768px) {
+                    width: 60px;
+                    height: 60px;
+                }
+                &.active{
+                    border: 3px solid $themeColor;
+                }
+            }
+            .logo{
+                &-team{            
+                width: 88px;
+                filter: invert(9%) sepia(39%) saturate(5914%) hue-rotate(266deg) brightness(103%) contrast(94%);
+                @media screen and (max-width: 768px) {
+                    width: 40px;
+
+                }
+                
+            }
+        }
+        .score{
+            &--board{
+                &-heading{
+                    @media screen and (max-width: 768px) {
+                        font-size: size(17);
+                    }
+                }
+                &-subheading{
+                    @media screen and (max-width: 768px) {
+                        font-size: size(15);
+                    }
+                }
+            }
+            &-line{
+                position: relative;
+                &:last-child::after{
+                    display: none;
+                }
+                &:after{
+                    content: '';
+                    border-bottom: 1px solid rgba($white, 0.75);
+                    width: 73px;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                sub{
+                    position: relative;
+                    top: -2px;
+                    @media screen and (max-width: 768px) {
+                        top: 0;
+                        font-size: size(10);
+                    }
+                }
+            }
+        }
+
+      }
+     }
+        &--cricket{
+            &-tournament {
+                @media screen and (max-width: 768px) {
+                    flex-wrap: wrap;
+                }
+            }
+            &-infodtl {
+                line-height: 1;
+                @media screen and (max-width: 768px) {
+                    
+                    h5{
+                        font-size: size(15);
+                    }
+                    span{
+                        font-size: size(16);
+                    }
+                }
+            }
+            &-list{
+                width: calc(100% / 2 - 20px);
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+            }
+            &-inner{
+                padding: 15px 30px;
+                border-radius: 5px;
+                @media screen and (max-width: 768px) {
+                    padding: 15px;
+                }
+            }
+        }
+        &--match{
+            &-timeinfo{
+                position: relative;
+            }
+        }
+
+}
+.line{
+    position: relative;
+    &:after{
+        content: '';
+        max-width: 500px;
+        width: 100%;
+        border-bottom: 1px solid rgba(247, 247, 250, 0.40);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 1px;
+    }
+}

@@ -1,0 +1,41 @@
+// Primary Colors
+$themeColor: #E50695;
+$green: #008632;
+$black: #000000;
+$white: #ffffff;
+$gray: #F5F5F5;
+$offWhite: rgba(#F7F7FA, 0.50);
+
+// Shadows
+$boxShadow: 0px 3px 6px rgba($black, 0.16);
+
+//  Font Family
+$fontFamily: "Roboto";
+
+// Font Weights
+$normal: normal;
+$medium: 500;
+$bold: bold;
+
+// Mixins
+$baseSize: 16;
+@function size($target, $context: $baseSize) {
+  @return calc($target / $context) * 1em;
+}
+
+@mixin max($max) {
+  @media only screen and (max-width: #{$max}px) {
+    @content;
+  }
+}
+@mixin min($min) {
+  @media only screen and (min-width: #{$min}px) {
+    @content;
+  }
+}
+
+@mixin maxOrientation($max, $orientation) {
+  @media only screen and (max-device-width: #{$max}px) and (orientation: #{$orientation}) {
+    @content;
+  }
+}
